@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav"> 
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/summary">Summary</router-link> |
+      <router-link to="/firstroute/Shinde's">FirstRoute</router-link> | 
+      <router-link to="/firstroute/Shinde's/child">FirstRouteChild</router-link> |
+      <router-link to="/vueinstance">VueInstance</router-link> |
+      <router-link to="/computedprop">ComputedProperty</router-link> |
+      <router-link to="/conditionalrender">ConditionalRender</router-link> |     
+      <router-link to="/renderinglist">RenderingList</router-link> |
+
+      <router-link to="/profilepage">ProfilePage</router-link> |
+      <router-link to="/accountinfo">AccountInfo</router-link>
     </div>
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
+
+<script>
+   export default {
+     name: "app"
+   }
+</script>
 
 <style>
 #app {

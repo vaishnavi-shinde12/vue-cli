@@ -1,8 +1,21 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Admin from "@/components/Admin";
+import User from "@/components/User";
+import Detail from "@/components/Detail";
+import FirstRouter from "@/components/FirstRouter";
+import SecondRouter from "@/components/SecondRouter";
+import vueinstance from "@/components/vueinstance";
+import ConditionalRender from "@/components/ConditionalRender";
+import RenderingList from "@/components/RenderingList";
+
+import computedprop from "@/components/computedprop";
+import Profilepage from "@/components/Profilepage";
 
 Vue.use(Router);
+function lazyLoad(view){                                 //Function for lazyLoading
+  return() => import(`@/views/${view}.vue`)
+}
 
 export default new Router({
   mode: "history",
@@ -11,16 +24,71 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: lazyLoad("Home")
+    },
+    {
+      path: "/vueinstance",
+      name: "vueinstance",
+      component: vueinstance
     },
     {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: lazyLoad("About") 
+    },
+    {
+      path: "/summary",
+      name: "summary",      
+      component: lazyLoad("summary")                   //lazy Load
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: Admin,
+      children: [{                              // Parent Child Component
+        path: "user",
+        name: "user",
+        component: User,
+        children : [{
+          path: "detail",
+          name: "detail",
+          component: Detail
+        }]
+      }]
+    },
+    {
+      path: "/firstrouter/:name",                // routes with parameters
+      name: "FirstRouter",                        
+      component: FirstRouter
+    },
+    {
+      path: "secondrouter/:name",
+      name: "SecondRouter",
+      component: SecondRouter,
+      children: [{
+        path: "child",
+        component: SecondRouter
+      }]
+    },
+    {
+      path: "/computedprop",                // routes with parameters
+      name: "computedprop",                        
+      component: computedprop
+    },
+    {
+      path: "/profilepage",
+      name: "profilepage",
+      component: Profilepage
+    },
+    {
+      path: "/conditionalrender",
+      name: "conditionalrender",
+      component: ConditionalRender
+    },
+    {
+      path: "/renderinglist",
+      name: "renderinglist",
+      component: RenderingList
     }
   ]
 });
