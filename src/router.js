@@ -8,6 +8,7 @@ import SecondRouter from "@/components/SecondRouter";
 import vueinstance from "@/components/vueinstance";
 import ConditionalRender from "@/components/ConditionalRender";
 import RenderingList from "@/components/RenderingList";
+import lifecycle from "@/components/lifecycle";
 
 import computedprop from "@/components/computedprop";
 import Profilepage from "@/components/Profilepage";
@@ -89,6 +90,11 @@ export default new Router({
       path: "/renderinglist",
       name: "renderinglist",
       component: RenderingList
+    },
+    {
+      path: "/lifecycle",
+      name: "lifecycle",
+      component: lifecycle
     }
   ]
 });

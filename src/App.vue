@@ -10,6 +10,7 @@
       <router-link to="/computedprop">ComputedProperty</router-link> |
       <router-link to="/conditionalrender">ConditionalRender</router-link> |     
       <router-link to="/renderinglist">RenderingList</router-link> |
+      <router-link to="/lifecycle">Lifecycle Hook</router-link> |
 
       <router-link to="/profilepage">ProfilePage</router-link> |
       <router-link to="/accountinfo">AccountInfo</router-link>
