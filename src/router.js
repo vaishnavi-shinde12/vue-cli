@@ -3,15 +3,14 @@ import Router from "vue-router";
 import Admin from "@/components/Admin";
 import User from "@/components/User";
 import Detail from "@/components/Detail";
-import FirstRouter from "@/components/FirstRouter";
-import SecondRouter from "@/components/SecondRouter";
+// import FirstRouter from "@/components/FirstRouter";
+// import SecondRouter from "@/components/SecondRouter";
 import vueinstance from "@/components/vueinstance";
 import ConditionalRender from "@/components/ConditionalRender";
 import RenderingList from "@/components/RenderingList";
 import lifecycle from "@/components/lifecycle";
-
+import First from "@/components/First";
 import computedprop from "@/components/computedprop";
-import Profilepage from "@/components/Profilepage";
 
 Vue.use(Router);
 function lazyLoad(view){                                 //Function for lazyLoading
@@ -57,29 +56,24 @@ export default new Router({
         }]
       }]
     },
-    {
-      path: "/firstrouter/:name",                // routes with parameters
-      name: "FirstRouter",                        
-      component: FirstRouter
-    },
-    {
-      path: "secondrouter/:name",
-      name: "SecondRouter",
-      component: SecondRouter,
-      children: [{
-        path: "child",
-        component: SecondRouter
-      }]
-    },
+    // {
+    //   path: "/firstrouter/:name",                // routes with parameters
+    //   name: "FirstRouter",                      
+    //   component: FirstRouter
+    // },
+    // {
+    //   path: "secondrouter/:name",
+    //   name: "SecondRouter",
+    //   component: SecondRouter,
+    //   children: [{
+    //     path: "child",
+    //     component: SecondRouter
+    //   }]
+    // },
     {
       path: "/computedprop",                // routes with parameters
       name: "computedprop",                        
       component: computedprop
-    },
-    {
-      path: "/profilepage",
-      name: "profilepage",
-      component: Profilepage
     },
     {
       path: "/conditionalrender",
@@ -95,6 +89,11 @@ export default new Router({
       path: "/lifecycle",
       name: "lifecycle",
       component: lifecycle
+    },
+    {
+      path: "/firstprop",
+      name: "first",
+      component: First
     }
   ]
 });

@@ -1,12 +1,16 @@
 <template>
   <div class= "user"> {{ msg2 }}
-      <router-view></router-view>
+      <app-detail></app-detail>
   </div> 
 </template>
 
 <script>
+  import Detail from "./Detail.vue";
   export default ({
       name: "user",
+      components: {
+            appDetail: Detail
+        },
       data() {
           return {
               msg2 : "User(Intermediate) Component"

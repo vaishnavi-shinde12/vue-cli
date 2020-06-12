@@ -4,24 +4,36 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/summary">Summary</router-link> |
-      <router-link to="/firstroute/Shinde's">FirstRoute</router-link> | 
-      <router-link to="/firstroute/Shinde's/child">FirstRouteChild</router-link> |
+      <router-link to="/admin">Admin</router-link> |
+      <!-- <router-link to="/firstroute/Shinde's">FirstRoute</router-link> | 
+      <router-link to="/firstroute/Shinde's/child">FirstRouteChild</router-link> | -->
       <router-link to="/vueinstance">VueInstance</router-link> |
       <router-link to="/computedprop">ComputedProperty</router-link> |
       <router-link to="/conditionalrender">ConditionalRender</router-link> |     
       <router-link to="/renderinglist">RenderingList</router-link> |
       <router-link to="/lifecycle">Lifecycle Hook</router-link> |
 
-      <router-link to="/profilepage">ProfilePage</router-link> |
-      <router-link to="/accountinfo">AccountInfo</router-link>
+      <router-link to="/firstprop">Prop</router-link> |
+      <!-- <pre><div class="container">
+        <div class="row">                            < this is another way to render Prop like (router-link) >
+          <div class="col-xs-12">
+            <app-first></app-first>
+          </div>
+        </div>
+      </div></pre> -->
+
     </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import First from "@/components/First.vue"
    export default {
-     name: "app"
+     name: "app",
+     components: {
+      appFirst: First,
+     }
    }
 </script>
 
@@ -45,4 +57,9 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+    div.component {
+        border: 1px solid black;
+        padding: 30px;
+    }
 </style>
+

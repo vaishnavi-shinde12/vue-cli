@@ -4,6 +4,14 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+export const eventBus = new Vue({
+  methods: {                              //centralized code in event Bus
+    changeAge: function(age) {
+      this.$emit('ageWasEdited',age);
+    }
+  }
+});
+
 new Vue({
   router,
   render: h => h(App)
