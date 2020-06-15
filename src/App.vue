@@ -21,6 +21,28 @@
           </div>
         </div>
       </div></pre> -->
+      
+      <div><pre>
+      </pre>
+        <hr>
+        <button @click="selectedComponent = 'appSlots'">Quote</button>
+        <button @click="selectedComponent = 'appAuthor'">Author</button>
+        <button @click="selectedComponent = 'appPublisher'">Publisher</button>
+        <hr>
+        <p>{{ selectedComponent }}</p>
+        <keep-alive>                                        <!-- if using keep-alive tag the two lifecycle hook get generated -->
+          <component :is="selectedComponent">               <!-- That is Activated Hook and Deactivated Hook -->
+            <p>Default content</p>
+          </component>
+      </keep-alive>
+
+        <!-- <app-slots>                                              --   opening selector
+          <h2 slot="title"> {{ quoteTitle }}</h2>
+          <p slot ="content">A Wonderful Quote!!</p>
+          <p>Beautiful Slots</p>
+          <p>Default Slots</p>
+        </app-slots>                                                  --  closing selector -->
+      </div>
 
     </div>
     <router-view></router-view>
@@ -28,11 +50,25 @@
 </template>
 
 <script>
-  import First from "@/components/First.vue"
+  import First from "@/components/First.vue";
+  import Slots from "@/components/Slots.vue";
+  import Author from "@/components/Author.vue";
+  import Publisher from "@/components/Publisher.vue";
+
+
    export default {
      name: "app",
+     data: function() {
+         return {
+           quoteTitle: "The Quote",
+           selectedComponent: 'appSlots'
+         }
+     },
      components: {
       appFirst: First,
+      appSlots: Slots,
+      appAuthor: Author,
+      appPublisher: Publisher
      }
    }
 </script>

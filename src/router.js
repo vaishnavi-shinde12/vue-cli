@@ -11,6 +11,7 @@ import RenderingList from "@/components/RenderingList";
 import lifecycle from "@/components/lifecycle";
 import First from "@/components/First";
 import computedprop from "@/components/computedprop";
+import Slots from "@/components/Slots";
 
 Vue.use(Router);
 function lazyLoad(view){                                 //Function for lazyLoading
@@ -94,6 +95,11 @@ export default new Router({
       path: "/firstprop",
       name: "first",
       component: First
+    },
+    {
+      path: "/slots",
+      name: "slots",
+      component: Slots
     }
   ]
 });
