@@ -35,7 +35,6 @@
             <p>Default content</p>
           </component>
       </keep-alive>
-
         <!-- <app-slots>                                              --   opening selector
           <h2 slot="title"> {{ quoteTitle }}</h2>
           <p slot ="content">A Wonderful Quote!!</p>
@@ -43,6 +42,26 @@
           <p>Default Slots</p>
         </app-slots>                                                  --  closing selector -->
       </div>
+
+      <hr class="new1">
+      <pre>
+      </pre>
+      <div>
+          <app-header :quoteCount="quotes.length" :maxQuotes="maxQuote"></app-header>
+          <pre>
+          </pre>
+          <app-new-quote@quoteAdded="newQuote"></app-new-quote>
+          <pre>
+          </pre>
+          <app-quote-grid :quotes="quotes" @quoteDeleted="deleteQuote"></app-quote-grid>
+           <div class="row">
+             <div class="col-sm-12 text-center">
+               <div class="alert alert-info"><pre>
+                    Info: Click on a Quote to delete it!
+                </pre></div>
+             </div>
+           </div>  
+        </div>
 
     </div>
     <router-view></router-view>
@@ -54,21 +73,41 @@
   import Slots from "@/components/Slots.vue";
   import Author from "@/components/Author.vue";
   import Publisher from "@/components/Publisher.vue";
-
+  import QuoteGrid from "@/components/QuoteGrid.vue";
+  import NewQuote from "@/components/NewQuote.vue";
+  import Header from "@/components/Header.vue";
 
    export default {
      name: "app",
      data: function() {
          return {
            quoteTitle: "The Quote",
-           selectedComponent: 'appSlots'
+           selectedComponent: 'appSlots',
+ 
+           quotes: [
+                     'Just a Quote to see something'
+           ],
+           maxQuote: 10
          }
      },
      components: {
       appFirst: First,
+
       appSlots: Slots,
       appAuthor: Author,
-      appPublisher: Publisher
+      appPublisher: Publisher,
+
+      appQuoteGrid: QuoteGrid,
+      appNewQuote: NewQuote,
+      appHeader: Header
+     },
+     methods: {
+       newQuote(quote) {
+           this.quotes.push(quote);
+       },
+       deleteQuote(index) {
+         this.quotes.splice(index, 1)
+       }
      }
    }
 </script>
@@ -93,9 +132,16 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-    div.component {
-        border: 1px solid black;
-        padding: 30px;
-    }
+div.component {
+   border: 1px solid black;
+   padding: 30px;
+}
+
+hr.new1 {
+  border: 2px dashed red;
+}
+.alert {
+  background-color:rgb(213, 241, 243);
+}
 </style>
 
