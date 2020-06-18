@@ -12,7 +12,7 @@
       <router-link to="/conditionalrender">ConditionalRender</router-link> |     
       <router-link to="/renderinglist">RenderingList</router-link> |
       <router-link to="/lifecycle">Lifecycle Hook</router-link> |
-
+      <router-link to="/form">Form</router-link> |
       <router-link to="/firstprop">Prop</router-link> |
       <!-- <pre><div class="container">
         <div class="row">                            < this is another way to render Prop like (router-link) >
@@ -22,37 +22,32 @@
         </div>
       </div></pre> -->
       
-      <div><pre>
+      <!-- <div><pre>
       </pre>
         <hr>
         <button @click="selectedComponent = 'appSlots'">Quote</button>
         <button @click="selectedComponent = 'appAuthor'">Author</button>
         <button @click="selectedComponent = 'appPublisher'">Publisher</button>
         <hr>
-        <p>{{ selectedComponent }}</p>
-        <keep-alive>                                        <!-- if using keep-alive tag the two lifecycle hook get generated -->
-          <component :is="selectedComponent">               <!-- That is Activated Hook and Deactivated Hook -->
-            <p>Default content</p>
+        <p>{{ selectedComponent }}</p> -->
+        <!-- <keep-alive>                                       -- if using keep-alive tag the two lifecycle hook get generated -->
+          <!-- <component :is="selectedComponent">               -- That is Activated Hook and Deactivated Hook -->
+            <!-- <p>Default content</p>
           </component>
-      </keep-alive>
+      </keep-alive> -->
         <!-- <app-slots>                                              --   opening selector
           <h2 slot="title"> {{ quoteTitle }}</h2>
           <p slot ="content">A Wonderful Quote!!</p>
           <p>Beautiful Slots</p>
           <p>Default Slots</p>
         </app-slots>                                                  --  closing selector -->
-      </div>
+      <!-- </div> -->
 
-      <hr class="new1">
-      <pre>
-      </pre>
+      <!-- A small New Project of Quotes -->
+      <!-- <hr class="new1">
       <div>
           <app-header :quoteCount="quotes.length" :maxQuotes="maxQuote"></app-header>
-          <pre>
-          </pre>
           <app-new-quote@quoteAdded="newQuote"></app-new-quote>
-          <pre>
-          </pre>
           <app-quote-grid :quotes="quotes" @quoteDeleted="deleteQuote"></app-quote-grid>
            <div class="row">
              <div class="col-sm-12 text-center">
@@ -61,7 +56,7 @@
                 </pre></div>
              </div>
            </div>  
-        </div>
+        </div> -->
 
     </div>
     <router-view></router-view>
@@ -142,6 +137,7 @@ hr.new1 {
 }
 .alert {
   background-color:rgb(213, 241, 243);
+  border: 0px solid rgb(213, 241, 243)
 }
 </style>
 
