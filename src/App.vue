@@ -9,11 +9,12 @@
       <router-link to="/firstroute/Shinde's/child">FirstRouteChild</router-link> | -->
       <router-link to="/vueinstance">VueInstance</router-link> |
       <router-link to="/computedprop">ComputedProperty</router-link> |
-      <router-link to="/conditionalrender">ConditionalRender</router-link> |     
+      <router-link to="/conditionalrender">ConditionalRender</router-link> |
       <router-link to="/renderinglist">RenderingList</router-link> |
       <router-link to="/lifecycle">Lifecycle Hook</router-link> |
       <router-link to="/form">Form</router-link> |
       <router-link to="/firstprop">Prop</router-link> |
+      <router-link to="/directives">Directive</router-link> |
       <!-- <pre><div class="container">
         <div class="row">                            < this is another way to render Prop like (router-link) >
           <div class="col-xs-12">

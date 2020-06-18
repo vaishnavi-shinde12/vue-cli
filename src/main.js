@@ -12,6 +12,37 @@ export const eventBus = new Vue({          //for props
   }
 });
 
+Vue.directive('highlight',{
+    bind(el, binding, vnode) {
+      // el.style.backgroundColor= "pink";                 //-- passing a simple directive
+
+      // el.style.backgroundColor = binding.value;         //-- passing values to custom directive 
+
+      // if(binding.arg == 'background') {           
+      //   el.style.backgroundColor = binding.value;
+      // } 
+      // else {
+      //   el.style.color = binding.value;
+      // }                                                 // -- passing arguments to custom directive
+      
+      var delay= 0;
+      if(binding.modifiers['delayed']) {
+        delay = 3000;
+      }
+      setTimeout(() => {
+        if(binding.arg == 'background') {           
+          el.style.backgroundColor = binding.value;
+        } 
+        else {
+          el.style.color = binding.value;
+        }                                                 
+      }, delay)
+ 
+    }
+});                //creating global directives (v-highlight)
+
+
+
 new Vue({
   router,
   render: h => h(App)
