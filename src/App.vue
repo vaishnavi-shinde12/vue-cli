@@ -15,6 +15,7 @@
       <router-link to="/form">Form</router-link> |
       <router-link to="/firstprop">Prop</router-link> |
       <router-link to="/directives">Directive</router-link> |
+      <router-link to="/filter">Filter</router-link>
       <!-- <pre><div class="container">
         <div class="row">                            < this is another way to render Prop like (router-link) >
           <div class="col-xs-12">

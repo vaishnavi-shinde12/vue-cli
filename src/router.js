@@ -14,6 +14,7 @@ import computedprop from "@/components/computedprop";
 import Slots from "@/components/Slots";
 import Form from "@/components/Form";
 import Directives from "@/components/Directives";
+import Filters from "@/components/Filters";
 
 Vue.use(Router);
 function lazyLoad(view){                                 //Function for lazyLoading
@@ -112,6 +113,11 @@ export default new Router({
       path: "/directives",
       name: "directives",
       component: Directives
+    },
+    {
+      path: "/filter",
+      name: "filter",
+      component: Filters
     }
   ]
 });

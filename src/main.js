@@ -13,7 +13,7 @@ export const eventBus = new Vue({          //for props
 });
 
 Vue.directive('highlight',{
-    bind(el, binding, vnode) {
+    bind(el, binding) {
       // el.style.backgroundColor= "pink";                 //-- passing a simple directive
 
       // el.style.backgroundColor = binding.value;         //-- passing values to custom directive 
@@ -42,6 +42,15 @@ Vue.directive('highlight',{
 });                //creating global directives (v-highlight)
 
 
+Vue.filter('to-lowercase', function(value) {
+   return value.toLowerCase();
+});
+
+Vue.mixin({
+      created() {
+        console.log('Global Mixin - Created Hook');
+      }
+});
 
 new Vue({
   router,
