@@ -27,7 +27,7 @@
             'local-highlight': {
                 bind(el, binding) {                                            //Directive hook function { bind(el,binding,vnode) }                    var delay= 0;
                     if(binding.modifiers['delayed']) {
-                        delay = 3000;
+                        var delay = 3000;
                     }
                     if (binding.modifiers['blink']) {                           // using multiple modifiers & also passing more complex values to directives
                         let mainColor = binding.value.mainColor; 
