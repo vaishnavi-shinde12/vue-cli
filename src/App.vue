@@ -16,6 +16,7 @@
       <router-link to="/firstprop">Prop</router-link> |
       <router-link to="/directives">Directive</router-link> |
       <router-link to="/filter">Filter</router-link>
+      <!-- Props alternative way to render -->
       <!-- <pre><div class="container">
         <div class="row">                            < this is another way to render Prop like (router-link) >
           <div class="col-xs-12">
@@ -24,6 +25,7 @@
         </div>
       </div></pre> -->
       
+      <!-- Quote Project 1 -->
       <!-- <div><pre>
       </pre>
         <hr>
@@ -45,7 +47,7 @@
         </app-slots>                                                  --  closing selector -->
       <!-- </div> -->
 
-      <!-- A small New Project of Quotes -->
+      <!-- A small New Project of Quotes 2-->
       <!-- <hr class="new1">
       <div>
           <app-header :quoteCount="quotes.length" :maxQuotes="maxQuote"></app-header>
@@ -59,6 +61,16 @@
              </div>
            </div>  
         </div> -->
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h1>Vuex</h1>
+            <app-resultvuex></app-resultvuex>
+            <app-another-result></app-another-result>
+            <hr>
+            <app-countervuex></app-countervuex>
+          </div>
+        </div>
 
     </div>
     <router-view></router-view>
@@ -74,6 +86,11 @@
   import NewQuote from "@/components/NewQuote.vue";
   import Header from "@/components/Header.vue";
 
+  import Countervuex from "@/components/Countervuex.vue";
+  import Resultvuex from "@/components/Resultvuex.vue";
+  import AnotherResult from "@/components/AnotherResult.vue";
+
+
    export default {
      name: "app",
      data: function() {
@@ -84,8 +101,8 @@
            quotes: [
                      'Just a Quote to see something'
            ],
-           maxQuote: 10
-         }
+           maxQuote: 10, 
+          }
      },
      components: {
       appFirst: First,
@@ -96,7 +113,12 @@
 
       appQuoteGrid: QuoteGrid,
       appNewQuote: NewQuote,
-      appHeader: Header
+      appHeader: Header,
+
+      appCountervuex: Countervuex,
+      appResultvuex: Resultvuex,
+      appAnotherResult: AnotherResult
+
      },
      methods: {
        newQuote(quote) {

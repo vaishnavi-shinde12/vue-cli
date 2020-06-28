@@ -4,8 +4,10 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+import { store } from "./store/store.js";
+ 
 export const eventBus = new Vue({          //for props
-  methods: {                              //centralized code in event Bus
+  methods: {                               //centralized code in event Bus
     changeAge: function(age) {
       this.$emit('ageWasEdited',age);
     }
@@ -54,5 +56,6 @@ Vue.mixin({
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount("#app");
