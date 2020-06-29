@@ -69,6 +69,7 @@
             <app-another-result></app-another-result>
             <hr>
             <app-countervuex></app-countervuex>
+            <app-another-counter></app-another-counter>
           </div>
         </div>
 
@@ -87,6 +88,7 @@
   import Header from "@/components/Header.vue";
 
   import Countervuex from "@/components/Countervuex.vue";
+  import AnotherCounter from "@/components/AnotherCounter.vue";
   import Resultvuex from "@/components/Resultvuex.vue";
   import AnotherResult from "@/components/AnotherResult.vue";
 
@@ -116,6 +118,7 @@
       appHeader: Header,
 
       appCountervuex: Countervuex,
+      appAnotherCounter: AnotherCounter,
       appResultvuex: Resultvuex,
       appAnotherResult: AnotherResult
 
