@@ -70,6 +70,10 @@
             <hr>
             <app-countervuex></app-countervuex>
             <app-another-counter></app-another-counter>
+            <hr>
+            <!-- <input type="text" :value="value" @input="updateValue">       using longer method of two way binding -->
+            <input type="text" v-model="value">                                <!-- using two way binding with shortcut 'v-model' -->      
+            <p>{{ value }}</p>
           </div>
         </div>
 
@@ -106,6 +110,18 @@
            maxQuote: 10, 
           }
      },
+     computed: {
+        value: {
+          // return this.$store.getters.value;                           // using custom two way binding
+            get() {
+               return this.$store.getters.value; 
+            },
+            set(value) {
+              this.$store.dispatch('updateValue',value)
+            }
+
+        }
+     },
      components: {
       appFirst: First,
 
@@ -129,7 +145,11 @@
        },
        deleteQuote(index) {
          this.quotes.splice(index, 1)
-       }
+       },
+
+       updateValue(event) {
+         this.$store.dispatch('updateValue', event.target.value);
+       } 
      }
    }
 </script>

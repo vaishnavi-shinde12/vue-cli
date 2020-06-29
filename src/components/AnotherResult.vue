@@ -6,13 +6,21 @@
 </template>
 
 <script>
-    import {mapGetters } from 'vuex';
+    import { mapGetters } from 'vuex';
+    import * as types from '../store/types';
     export default {
         computed: {
-            ...mapGetters([         // ... spread operator - allows us to tell JS to pull out al properties & methods in this object & create key value pair for each of them.
-              'doubleCounter',      //using mapGetters we save a lot of code and easily get access to our getters
-              'stringCounter'         
-            ])  
+            ...mapGetters({
+                doubleCounter: types.DOUBLE_COUNTER,
+                stringCounter: types.CLICK_COUNTER
+            })
+
+
+
+            // ...mapGetters([         // ... spread operator - allows us to tell JS to pull out al properties & methods in this object & create key value pair for each of them.
+            //   'doubleCounter',      //using mapGetters we save a lot of code and easily get access to our getters
+            //   'stringCounter'         
+            // ])  
         }
 
         // computed: {
